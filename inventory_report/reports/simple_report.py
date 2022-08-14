@@ -13,18 +13,19 @@ class SimpleReport:
 
     @staticmethod
     def get_company_more_products(list):
-        list.sort(reverse=True, key=SimpleReport.order_products)
-        return list[0]["nome_da_empresa"]
+        order_products = SimpleReport.order_products
+        ordered_list = sorted(list, reverse=True, key=order_products)
+        return ordered_list[0]["nome_da_empresa"]
 
     @staticmethod
     def get_fabrication_more_old(list):
-        list.sort(key=SimpleReport.order_fabrication)
-        return list[0]["data_de_fabricacao"]
+        ordered_list = sorted(list, key=SimpleReport.order_fabrication)
+        return ordered_list[0]["data_de_fabricacao"]
 
     @staticmethod
     def get_validity_more_recent(list):
-        list.sort(key=SimpleReport.order_validity)
-        return list[0]["data_de_validade"]
+        ordered_list = sorted(list, key=SimpleReport.order_validity)
+        return ordered_list[0]["data_de_validade"]
 
     @staticmethod
     def set_list_companies(list_of_products):

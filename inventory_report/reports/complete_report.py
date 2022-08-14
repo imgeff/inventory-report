@@ -11,8 +11,8 @@ class CompleteReport(SimpleReport):
     def mount_additional_report(list_products):
         additional_report = "\nProdutos estocados por empresa:\n"
         list_companies = (
-            CompleteReport.calculate_company_products(list_products))
-        list_companies.sort(reverse=True, key=CompleteReport.order_products)
+            SimpleReport.calculate_company_products(list_products))
+
         for company in list_companies:
             name_company = company["nome_da_empresa"]
             quantity = company["quantity_products"]
